@@ -1,0 +1,21 @@
+<h1>{{title}}</h1>
+<div>
+    <p>
+        <label for="latitude">Latitude: </label>
+        <input type="text" [(ngModel)]="lat" id="latitude">
+    </p>
+    <p>
+        <label for="longitude">Longitude: </label>
+        <input type="text" [(ngModel)]="lon" id="longitude">
+    </p>
+    <button (click)="submitRequest()">Show weather</button>
+</div>
+<div *ngIf="error" class="error">{{error}}</div>
+<div *ngIf="forecast">
+    <div *ngFor="let day of forecast" class="day">
+        <h3>{{day.date}}</h3>
+        <img [src]="day.icon" alt="">
+        <p><strong>Temp. min: </strong>{{day.minTemp}}</p>
+        <p><strong>Temp. max: </strong>{{day.highTemp}}</p>
+    </div>
+</div>

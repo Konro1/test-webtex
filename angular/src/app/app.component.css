@@ -1,0 +1,9 @@
+.day {
+    display: inline-block;
+    width: 20%;
+    float: left;
+}
+.error {
+    padding: 20px;
+    color: red;
+}
